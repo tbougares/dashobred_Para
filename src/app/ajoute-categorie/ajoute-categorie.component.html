@@ -1,0 +1,48 @@
+
+<div class="container">
+
+
+    <div class="row mb-3">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Réferance de catégorie:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="inputEmail3" placeholder="Réferance catégorie" [(ngModel)]="Cat.refCat" />
+        
+    </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Name de catégorie :</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="inputEmail3" placeholder="Name catégorie" [(ngModel)]="Cat.nameCateg" />
+              
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">l'extension :</label>
+        <div class="col-sm-10">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"  >
+          <label class="form-check-label" for="flexRadioDefault1">
+            Oui
+          </label>
+        </div>
+        <div class="col-sm-10">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked >
+          <label class="form-check-label" for="flexRadioDefault2">
+            Non
+          </label>
+        </div>
+        
+
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-2 col-form-label" for="form3Example4cdg">Upload photo de Votre catégorie:</label>
+        <input type="file" id="form3Example4cdg" class="col-sm-10" (change)="SelectImage($event) " [(ngModel)]="Cat.ImgCat"/>
+        <img [src]="Image.imageName" alt="">
+      </div>
+      
+
+    
+    
+    <button type="submit" class="btn btn-primary" (click)="Add()" >Ajouter</button>  
+
+
+</div>
