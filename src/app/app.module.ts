@@ -26,6 +26,8 @@ import { ForgetPasswordComponent } from './front-user/forget-password/forget-pas
 import { ProfileDetailsComponent } from './front-user/profile-details/profile-details.component';
 import { AddressComponent } from './front-user/address/address.component';
 import { EditAddressComponent } from './front-user/edit-address/edit-address.component';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 
@@ -34,9 +36,9 @@ import { EditAddressComponent } from './front-user/edit-address/edit-address.com
     AppComponent,
     DashboredComponent,
     HomeComponent,
-  
+
     CategorieComponent,
-  
+
     AjouteCategorieComponent,
     ProductComponent,
     HeaderComponent,
@@ -60,6 +62,9 @@ import { EditAddressComponent } from './front-user/edit-address/edit-address.com
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    MatInputModule,
+    MatFormFieldModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

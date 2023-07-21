@@ -16,7 +16,7 @@ export class AjouteCategorieComponent implements OnInit {
   constructor(public Categorie:CategorieService, public Image:ImageService) {  }
 
   ngOnInit(): void {
-    
+
     this.Cat={refCat:"",nameCateg:"",ImgCat:""}
   }
   Add(){
@@ -32,5 +32,7 @@ export class AjouteCategorieComponent implements OnInit {
 
 
   }
+  add() {
 
+  }
 }

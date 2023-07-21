@@ -20,41 +20,44 @@ export class ProductComponent implements OnInit {
   nameProd=""
   quantite=""
   prixProd=""
-  categories:any 
+  categories:any
   nameCat=""
-  
+
   index=0
   loading = true
   tab=[1,2,3,4]
   Tab_Produit:any[]=[]
-  
+
   public  Produits= new FormGroup( {
     refProd:new FormControl('',[Validators.required ]),
     nameProd:new FormControl('',[Validators.required ]),
     quantite: new FormControl('',[Validators.required]),
     prixProd: new FormControl('',[Validators.required]),
     CategoriProd:new FormControl(''),
-    
+
     photoProd:new FormControl(''),
     descProd:new FormControl('',[Validators.required ]),
     stock:new FormControl('',[Validators.required ]),
-    
+
+
   })
-  
+  keywords:string[]=[]
+  keyword=""
 
 
-constructor(public serviceProduit:ProduitService,public serviceCategorie:CategorieService,public imageSereice:ImageService) { 
-  
+
+constructor(public serviceProduit:ProduitService,public serviceCategorie:CategorieService,public imageSereice:ImageService) {
+
   this.serviceCategorie.getAllcategorie().subscribe(res=>{
     if(res.valueOf())
-    { var rep:any  
+    { var rep:any
     rep=res.valueOf()
     this.serviceCategorie.categorie=rep;
-    
+    //this.dataArray=res;
     this.loading =false
     console.log(this.categories)
 
-    console.log(rep)}}) 
+    console.log(rep)}})
 }
 
 ngOnInit(): void {
@@ -66,7 +69,7 @@ ngOnInit(): void {
 }
 
 Add(){
-  
+
   this.Produits.get("CategoriProd")?.setValue(this.categories)
   console.log(this.Produits.value.CategoriProd)
   this.Produits.get("photoProd")?.setValue(this.imageSereice.img[0])
@@ -82,7 +85,8 @@ Add(){
     photoProd:this.Produits.value.photoProd,
     descProd:this.Produits.value.descProd,
     stock:this.Produits.value.stock,
-    photosProd:this.imageSereice.img}
+    photosProd:this.imageSereice.img,
+    keywords:this.keywords}
   console.log("eeeeeeee")
   // this.Produits.get("CategoriProd")?.setValue(this.categories)
   //
@@ -97,7 +101,7 @@ Add(){
       obj=res.valueOf()
 
       console.log(obj)
-    
+
     })
 
   console.log("eeeeeeee1")
@@ -109,12 +113,22 @@ selectCategorie(e:any){
   console.log(e.target.value)
   this.categories=this.serviceCategorie.categorie[e.target.value]._id
   console.log(this.categories)
-  
+
   this.index=e.target.value
 }
 SelectImage(e:any){
-  
+
   console.log(e.target.value)
   this.imageSereice.registreImageMuliple(<File>e.target.files[0])
+}
+add() {
+
+  this.keywords.push(this.keyword)
+  this.keyword="";
+
+}
+SupprimerKeyword(index:any){
+  this.keywords.splice(index ,1)
+  console.log(this.keywords)
 }
 }

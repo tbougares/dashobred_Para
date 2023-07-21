@@ -6,17 +6,17 @@
       <label for="inputEmail3" class="col-sm-2 col-form-label">Réferance de catégorie:</label>
       <div class="col-sm-10">
         <input type="text" class="form-control" id="inputEmail3" placeholder="Réferance catégorie" [(ngModel)]="Cat.refCat" />
-        
+
     </div>
     </div>
     <div class="row mb-3">
         <label for="inputEmail3" class="col-sm-2 col-form-label">Name de catégorie :</label>
         <div class="col-sm-10">
           <input type="text" class="form-control" id="inputEmail3" placeholder="Name catégorie" [(ngModel)]="Cat.nameCateg" />
-              
+
         </div>
       </div>
-      <div class="row mb-3">
+      <!-- <div class="row mb-3">
         <label for="inputEmail3" class="col-sm-2 col-form-label">l'extension :</label>
         <div class="col-sm-10">
           <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"  >
@@ -30,7 +30,7 @@
             Non
           </label>
         </div>
-        
+
 
       </div>
       <div class="row mb-3">
@@ -38,11 +38,15 @@
         <input type="file" id="form3Example4cdg" class="col-sm-10" (change)="SelectImage($event) " [(ngModel)]="Cat.ImgCat"/>
         <img [src]="Image.imageName" alt="">
       </div>
-      
+       -->
+       <mat-form-field class="example-full-width">
+        <mat-label>First name</mat-label>
+        <input matInput>
+      </mat-form-field>
+      <button class="btn btn-primary" type="submit" (click)=add()>Button</button>
 
-    
-    
-    <button type="submit" class="btn btn-primary" (click)="Add()" >Ajouter</button>  
+
+    <button type="submit" class="btn btn-primary" (click)="Add()" >Ajouter</button>
 
 
 </div>
