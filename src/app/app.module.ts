@@ -20,7 +20,7 @@ import { CartComponent } from './front-user/cart/cart.component';
 import { CheckoutComponent } from './front-user/checkout/checkout.component';
 import { ShopComponent } from './front-user/shop/shop.component';
 import { OrdersComponent } from './front-user/orders/orders.component';
-import { LoginComponent } from './front-user/login/login.component';
+
 import { SignupComponent } from './front-user/signup/signup.component';
 import { ForgetPasswordComponent } from './front-user/forget-password/forget-password.component';
 import { ProfileDetailsComponent } from './front-user/profile-details/profile-details.component';
@@ -28,6 +28,8 @@ import { AddressComponent } from './front-user/address/address.component';
 import { EditAddressComponent } from './front-user/edit-address/edit-address.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+
+import { LoginComponent } from './admin/login/login.component';
 
 
 
@@ -53,7 +55,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     ForgetPasswordComponent,
     ProfileDetailsComponent,
     AddressComponent,
-    EditAddressComponent
+    EditAddressComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
